@@ -3,7 +3,7 @@ name: Release and deploy
 on: 
   push:
     branches:
-      - main
+      - staging
     tags:
       - "v1.0.0"
 
