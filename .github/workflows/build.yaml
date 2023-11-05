@@ -1,0 +1,39 @@
+name: Release and deploy
+
+on: 
+  push:
+    branches:
+      - main
+    tags:
+      - "v1.0.0"
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Start Minikube
+      uses: medyagh/setup-minikube@master
+      with:
+        minikube version: 'v1.25.2'
+        kubernetes version: 'v1.23.3'
+        driver: docker
+
+    - name: Deploy to Minikube
+      run: |
+        minikube kubectl -- apply -f hello-deployment.yaml
+        minikube kubectl -- apply -f hello-service.yaml
+        minikube kubectl get deployments
+        minikube kubectl get services
+        
+        
+
+    - name: Verify deployment and service
+      run: |   
+        sleep 10
+        NODE_PORT=$(kubectl get service hello-world -o jsonpath="{.spec.ports[0].nodePort}")
+        curl $(minikube ip):$NODE_PORT
