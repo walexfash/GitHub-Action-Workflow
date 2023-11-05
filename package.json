@@ -1,0 +1,9 @@
+{
+    "name": "my-project",
+    "version": "1.0.0",
+    "description": "minikube project",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/walexfash/mini-k8.git"
+    }
+}
