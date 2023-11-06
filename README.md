@@ -71,7 +71,7 @@ These are the output results after git push to the repository:
 
 My plan is to implement these steps but I got error in step 4 that stoped me from continue the remaining steps:
 
-# Step 1: Install ArgoCD
+**# Step 1: Install ArgoCD
 # Assuming you have kubectl configured to access a Kubernetes cluster
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
@@ -104,7 +104,9 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 # Step 6: Continuous delivery
 # Configure my Git repository to trigger deployments whenever changes are pushed
-# ArgoCD will automatically deploy new versions of my applications based on the changes in the repository
+# ArgoCD will automatically deploy new versions of my applications based on the changes in the repository**
+
+
 
 
 
