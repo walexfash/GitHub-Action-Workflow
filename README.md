@@ -2,13 +2,19 @@
 
 This task shows you how to deploy a Minikube Kubernetes cluster with a "Hello world" container.
 
+My approach is to et up a Minikube Kubernetes cluster on my local machine, deploy the initial version of the "Hello world" container using Kubernetes manifests (Service and Deployment). Test if it works and create a github action and ArgoCD Configuration. I took this approach because it will be an event-driven architecture, serverless and cost-effective.
+
 The task will focus on:
 
 ● Deploy Minikube Cluster: Set up a Minikube Kubernetes cluster on a local
 machine.
+
 ● Initial Container Deployment: Deploy the initial version of the "Hello world" container using Kubernetes manifests (Service and Deployment).
+
 ● GitHub Action Workflow: Create a GitHub Actions workflow to automate the deployment of the next semantic version of the container. This should include updating the version number.
+
 ● ArgoCD Configuration: Implement ArgoCD for continuous delivery and set up a GitOps workflow for Kubernetes cluster. The ArgoCD configuration should be based on a template.
+
 
 **Deploy Minikube Cluster: Set up a Minikube Kubernetes cluster on a local machine.**
 **Install minikube**
