@@ -75,42 +75,62 @@ These are the output results after git push to the repository:
 
 **ArgoCD Configuration: Implement ArgoCD for continuous delivery and set up a GitOps workflow for your Kubernetes cluster. Your ArgoCD configuration should be based on a template.**
 
-My plan is to implement these steps but I got error in step 4 that stoped me from continue the remaining steps:
+My plan is to implement these steps but I could implement the remaining steps because it would not run step 2. 
 
 **# Step 1: Install ArgoCD
-# Assuming you have kubectl configured to access a Kubernetes cluster
+# Assuming I have kubectl configured to access a Kubernetes cluster
+
 kubectl create namespace argocd
+
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # Step 2: Configure ArgoCD
+
 # Set up a port-forward to access the ArgoCD API server
+
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
-# Retrieve the initial password for the admin user
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+<img width="598" alt="image" src="https://github.com/walexfash/GitHub-Action-Workflow/assets/35840406/f0c9a6b8-fbc1-4a19-939b-8492aa4996cd">
 
-# Access the ArgoCD UI by opening http://localhost:8080 in a browser
+# Retrieve the initial password for the admin user
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+**
+**# Access the ArgoCD UI by opening http://localhost:8080 in a browser
+
 # Log in using the admin username and the password obtained above
 
 # Step 3: Connect to Git repository
+
 # In the ArgoCD UI, click on "New App" and provide the necessary details:
+
 # - Application Name: Choose a name for my application
+
 # - Project: Select the project or create a new one
+
 # - Repository URL: Enter the URL of my Git repository
+
 # - Path: Specify the path to my application manifests within the repository
+
 # - Cluster URL: Enter the URL of my Kubernetes cluster
+
 # - Namespace: Specify the target namespace for my application
 
 # Step 4: Define applications
+
 # In the ArgoCD UI, I will be able to define multiple applications by repeating Step 3 for each application I want to deploy
 
 # Step 5: Set up GitOps workflow
+
 # Make changes to my application manifests in the Git repository
+
 # ArgoCD will automatically detect the changes and apply them to my Kubernetes cluster
 
 # Step 6: Continuous delivery
+
 # Configure my Git repository to trigger deployments whenever changes are pushed
-# ArgoCD will automatically deploy new versions of my applications based on the changes in the repository**
+
+# ArgoCD will automatically deploy new versions of my applications based on the changes in the repository****
 
 
 
@@ -122,4 +142,4 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
  
 
 
- 
+ **
